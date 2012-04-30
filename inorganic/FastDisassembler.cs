@@ -6,7 +6,7 @@ using System.IO;
 using System.Reflection;
 using System.Globalization;
 
-namespace orgDASM
+namespace Inorganic
 {
     public partial class Disassembler
     {
@@ -35,7 +35,7 @@ namespace orgDASM
 
         private void LoadTable()
         {
-            StreamReader sr = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("orgDASM.DCPUtable.txt"));
+            StreamReader sr = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("Inorganic.DCPUtable.txt"));
             string[] lines = sr.ReadToEnd().Replace("\r", "").Split('\n');
             sr.Close();
             for (int i = 0; i < lines.Length; i++)

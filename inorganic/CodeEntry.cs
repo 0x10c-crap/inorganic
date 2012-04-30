@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace orgDASM
+namespace Inorganic
 {
     /// <summary>
     /// Represents a line of disassembled code.

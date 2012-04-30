@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace orgDASM
+namespace Inorganic
 {
     public partial class Disassembler
     {
@@ -38,7 +38,7 @@ namespace orgDASM
 
                             break;
                         default:
-                            Console.WriteLine("Invalid parameter.  Use orgDASM --help for help.");
+                            Console.WriteLine("Invalid parameter.  Use inorganic --help for help.");
                             return;
                     }
                 }
@@ -50,7 +50,7 @@ namespace orgDASM
                         outputFile = arg;
                     else
                     {
-                        Console.WriteLine("Invalid parameter.  Use orgDASM --help for help.");
+                        Console.WriteLine("Invalid parameter.  Use inorganic --help for help.");
                         return;
                     }
                 }
@@ -82,7 +82,7 @@ namespace orgDASM
 
         private static void DisplaySplash()
         {
-            Console.WriteLine(".orgDASM DCPU-16 Disassembler    Copyright Drew DeVault 2012");
+            Console.WriteLine("Inorganic DCPU-16 Disassembler    Copyright Drew DeVault 2012");
         }
     }
 }

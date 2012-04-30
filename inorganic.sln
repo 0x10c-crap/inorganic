@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "orgDASM", "orgDASM\orgDASM.csproj", "{91B787DB-9A90-49D2-B481-3403D39DD69E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inorganic", "Inorganic\Inorganic.csproj", "{91B787DB-9A90-49D2-B481-3403D39DD69E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
