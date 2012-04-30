@@ -1,0 +1,113 @@
+﻿# Table format:
+# type value key
+# value is a hex number that corresponds to the key
+# key is a specially formatted key:
+# _ is required whitespace
+# - is optional whitespace
+# %a is the "a" value
+# %b is the "b" value
+# $n is a literal value that is to be output after the instruction
+# "n" may increment from zero.
+# type is the type of entry: o for opcode, a and b for parameters.  n is a non-basic opcode.
+# In binary, these correspond to aaaaaabbbbbooooo
+########## OPCODES
+o 01 SET %b, %a
+o 02 ADD %b, %a
+o 03 SUB %b, %a
+o 04 MUL %b, %a
+o 05 MLI %b, %a
+o 06 DIV %b, %a
+o 07 DVI %b, %a
+o 08 MOD %b, %a
+o 09 MDI %b, %a
+o 0A AND %b, %a
+o 0B BOR %b, %a
+o 0C XOR %b, %a
+o 0D SHR %b, %a
+o 0E ASR %b, %a
+o 0F SHL %b, %a
+o 10 IFB %b, %a
+o 11 IFC %b, %a
+o 12 IFE %b, %a
+o 13 IFN %b, %a
+o 14 IFG %b, %a
+o 15 IFA %b, %a
+o 16 IFL %b, %a
+o 17 IFU %b, %a
+#o 18 [nop]
+#o 19 [nop]
+o 1A ADX %b, %a
+o 1B SBX %b, %a
+#o 1C [nop]
+#o 1D [nop]
+o 1E STI %b, %a
+o 1F STD %b, %a
+########## NONBASIC OPCODES
+#n 00 [nop]
+n 01 JSR %a
+#n 02 [nop]
+#n 03 [nop]
+#n 04 [nop]
+#n 05 [nop]
+#n 06 [nop]
+#n 07 HCF %a
+n 08 INT %a
+n 09 IAG %a
+n 0A IAS %a
+n 0B RFI %a
+n 0C IAQ %a
+#n 0D [nop]
+#n 0E [nop]
+#n 0F [nop]
+n 10 HWN %a
+n 11 HWQ %a
+n 12 HWI %a
+#n 13 [nop]
+#n 14 [nop]
+#n 15 [nop]
+#n 16 [nop]
+#n 17 [nop]
+#n 18 [nop]
+#n 19 [nop]
+#n 1A [nop]
+#n 1B [nop]
+#n 1C [nop]
+#n 1D [nop]
+#n 1E [nop]
+#n 1F [nop]
+########## VALUES
+a,b 0 A
+a,b 1 B
+a,b 2 C
+a,b 3 X
+a,b 4 Y
+a,b 5 Z
+a,b 6 I
+a,b 7 J
+a,b 8 [A]
+a,b 9 [B]
+a,b A [C]
+a,b B [X]
+a,b C [Y]
+a,b D [Z]
+a,b E [I]
+a,b F [J]
+a,b 10 [$0 + A]
+a,b 11 [$0 + B]
+a,b 12 [$0 + C]
+a,b 13 [$0 + X]
+a,b 14 [$0 + Y]
+a,b 15 [$0 + Z]
+a,b 16 [$0 + I]
+a,b 17 [$0 + J]
+a,b 18 POP
+a,b 18 PUSH
+a,b 19 PEEK
+a,b 19 [SP]
+a,b 1A [SP + $0]
+a,b 1B SP
+a,b 1C PC
+a,b 1D EX
+a,b 1E [$0]
+a,b 1F $0
+# 0x20-0x3F is not included in this document
