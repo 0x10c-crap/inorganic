@@ -14,7 +14,7 @@ namespace Inorganic
         public byte Opcode { get; set; }
         public byte ValueA { get; set; }
         public byte ValueB { get; set; }
-        public ushort[] AppendedValues { get; set; }
+        public ushort Address { get; set; }
     }
 
     public enum CodeEntryType

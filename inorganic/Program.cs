@@ -6,13 +6,13 @@ using System.IO;
 
 namespace Inorganic
 {
-    public partial class Disassembler
+    public class Program
     {
         public static void Main(string[] args)
         {
             DisplaySplash();
-            Disassembler disassembler = new Disassembler();
-            bool quick = false;
+            FastDisassembler disassembler = new FastDisassembler();
+            bool quick = false, littleEndian = false;
             string inputFile = null;
             string outputFile = null;
             for (int i = 0; i < args.Length; i++)
@@ -35,7 +35,13 @@ namespace Inorganic
                             quick = true;
                             break;
                         case "--output-file":
-
+                            outputFile = args[++i];
+                            break;
+                        case "--little-endian":
+                            littleEndian = true;
+                            break;
+                        case "--unsigned":
+                            disassembler.AllowSigned = false;
                             break;
                         default:
                             Console.WriteLine("Invalid parameter.  Use inorganic --help for help.");
@@ -55,12 +61,14 @@ namespace Inorganic
                     }
                 }
             }
+            if (outputFile == null)
+                outputFile = Path.GetFileNameWithoutExtension(inputFile) + ".dasm";
             // TODO: Validation
             Stream inputStream = File.OpenRead(inputFile);
             ushort[] data = new ushort[inputStream.Length / 2];
             for (int i = 0; i < inputStream.Length; i++)
             {
-                if (i % 2 == 0)
+                if (i % 2 == (littleEndian ? 0 : 1))
                     data[i / 2] |= (ushort)(inputStream.ReadByte());
                 else
                     data[i / 2] |= (ushort)(inputStream.ReadByte() << 8);
