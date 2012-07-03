@@ -8,7 +8,7 @@ Usage
 
 If you are on Linux or Mac, install Mono first, and use "mono inorganic.exe \[arguments\]", like you'd do with a Java program.
 
-    inorganic.exe \[flags\] inputfile.bin outputfile.dasm
+    inorganic.exe [flags] inputfile.bin outputfile.dasm
     
 This will disassemble the big-endian inputfile.bin and output it to outputfile.dasm. If you don't specify an output file, it will use \[inputfile\].dasm
 
